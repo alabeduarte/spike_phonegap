@@ -11,13 +11,19 @@ module.exports = (grunt) ->
   # Project configuration.
   grunt.initConfig    
 
-    # Coffeescript
     coffee:
+      compileBare:
+        options:
+          bare: true
+        files:
+          'js/index.js': 'coffee/index.coffee'
+
       compile:
         options:
           bare: true
         files:
-          'js/index.js': 'coffee/*.coffee'
+          'js/server.js': 'coffee/server.coffee'
+          
 
   grunt.loadNpmTasks 'grunt-contrib-coffee'
 
